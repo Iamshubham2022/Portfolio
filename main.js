@@ -6,3 +6,8 @@ var typed = new Typed(".text" ,{
     loop:true,
 });
 
+function getValue() {
+    var inputElement = document.getElementById("myInput");
+    var placeholderValue = inputElement.getAttribute("placeholder");
+    alert("Placeholder value: " + placeholderValue);
+  }

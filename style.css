@@ -525,7 +525,7 @@ section{
 .layer{
     width: 100%;
     height: 0;
-    background:linear-gradient(rgba(0,0,0,1),#0ef);
+    background:linear-gradient(rgba(0,0,0,1),rgb(92, 193, 202));
     position: absolute;
     border-radius: 8px;
     left: 0;
@@ -537,7 +537,7 @@ section{
     align-items: center;
     text-align: center;
     padding: 0 40px;
-    transition: height 0.5s;
+    transition: height .3s;
 }
 .layer h5{
     color: #0000;
@@ -642,7 +642,7 @@ section{
     box-shadow: 0 0 20px #0ef;
 }
 .contact-form form{
-    position: relative
+    position: relative;
 }
 .contact-form form input,form textarea{
     border: none;
@@ -682,7 +682,7 @@ section{
     0 0 20px cyan, 0 0 40px cyan 
 }
 
-.last-text{
+/* .last-text{
     width: 100%;
     margin:15px 0;
     font-size: 20px;
@@ -691,7 +691,7 @@ section{
     text-align: center;
     background: aliceblue;
 
-}
+} */
 .top{
     position: fixed;
     bottom: 2.1rem;
@@ -699,10 +699,16 @@ section{
 }
 .top i{
     color: #000;
-    background: rgb(25, 85, 89);
+    background: rgb(89, 36, 25);
     font-size: 20px;
     padding: 10px;
     border-radius: 0.5rem;
+}
+.top i:hover{
+    background: rgb(255, 0, 0);
+    box-shadow: 0 0 1px cyan,
+    0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
+    0 0 20px cyan, 0 0 40px cyan 
 }
 
 
