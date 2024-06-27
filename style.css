@@ -655,32 +655,36 @@ section {
     color:#0000;
     box-shadow: 0 0 20px #0ef;
 }
-.contact-form form{
+.contact-form form {
     position: relative;
 }
-.contact-form form input,form textarea{
+
+.contact-form form input,
+.contact-form form textarea {
     border: none;
     outline: none;
     width: 90%;
     padding: 18px;
-    background: #555557;
-    color: #0000;
+    background: #dcdcf3;
+    color: #000; /* Set this to a visible color */
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
 }
-.contact-form textarea{
+
+.contact-form textarea {
     resize: none;
     height: 220px;
 }
-.contact-form form .send{
+
+.contact-form form .send {
     display: inline-block;
     padding: 5px 15px;
-    background: #0ef;
+    background: rgb(57, 224, 236);
     border-radius: 40px;
     font-size: 16px;
-    color: #081629;
+    color: #141f2e;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
@@ -689,12 +693,15 @@ section {
     animation-delay: 1s;
 }
 
-.contact-form form .send:hover{
+.contact-form form .send:hover {
     background: cyan;
     box-shadow: 0 0 1px cyan,
-    0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
-    0 0 20px cyan, 0 0 40px cyan 
+    0 0 4px rgb(18, 79, 79),
+    0 0 4px rgb(7, 91, 91),
+    0 0 20px cyan,
+    0 0 40px cyan;
 }
+
 
 
 
