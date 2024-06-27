@@ -8,7 +8,7 @@
 
 body {
     color: #ededed;
-    background:#081629;
+    background:#040233;
 }
 
 .header {
@@ -33,12 +33,16 @@ body {
     font-weight: 600;
     cursor: default;
     opacity: 0;
+    font-size: 40px;
     animation: slideRight 1s ease forwards;
 }
 .fol{
     text-decoration: none;
+    font-size: 40px;
     color: red;
 }
+
+
 
 .navbar a {
     display: inline-block;
@@ -53,7 +57,7 @@ body {
     animation-delay: calc(.2s*var(--i));
 }
 .navbar a:hover {
-    color: #0ef;
+    color: red;
 }
 
 .home {
@@ -155,6 +159,26 @@ max-width: 600px;
     gap: 1.5rem;
     
 }
+.c-source{
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        object-fit:cover; 
+}
+@media (max-width: 768px) { 
+    .c-source {
+        display: none; 
+    }
+}
+
+.light-source{
+    border-radius: 50%;
+    box-shadow: 0 0 1px cyan,
+    0 0 4px rgb(14, 219, 219), 0 0 4px rgb(12, 158, 158),
+    0 0 20px cyan, 0 0 40px cyan 
+}
+
+
 .about-img img{
     padding-bottom: 20%;
     max-width: 630px;
@@ -510,6 +534,10 @@ section {
 }
 .portfolio-content{
     display: grid;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     grid-template-columns: repeat(auto-fit,minmax(395px,auto));
 
 }
