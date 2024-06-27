@@ -11,3 +11,19 @@ function getValue() {
     var placeholderValue = inputElement.getAttribute("placeholder");
     alert("Placeholder value: " + placeholderValue);
   }
+
+function SubmitHandler(event) {
+    event.preventDefault(); 
+    const name = document.getElementById('myName').value;
+    const email = document.getElementById('myEmail').value;
+    const subject = document.getElementById('mySubject').value;
+    const message = document.getElementById('myMessage').value;
+
+    console.log('Form Submitted');
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Subject:', subject);
+    console.log('Message:', message);
+
+    document.querySelector('.contact-form form').reset();
+}

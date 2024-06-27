@@ -8,7 +8,7 @@
 
 body {
     color: #ededed;
-    background:#040233;
+    background:#010838;
 }
 
 .header {
@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     z-index: 100;
-    background: #0a1938;
+    background: rgb(0, 0, 0);
 }
 
 .logo {
@@ -159,29 +159,11 @@ max-width: 600px;
     gap: 1.5rem;
     
 }
-.c-source{
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        object-fit:cover; 
-}
-@media (max-width: 768px) { 
-    .c-source {
-        display: none; 
-    }
-}
-
-.light-source{
-    border-radius: 50%;
-    box-shadow: 0 0 1px cyan,
-    0 0 4px rgb(14, 219, 219), 0 0 4px rgb(12, 158, 158),
-    0 0 20px cyan, 0 0 40px cyan 
-}
-
 
 .about-img img{
-    padding-bottom: 20%;
-    max-width: 630px;
+    /* padding-bottom: 20%; */
+    margin-left: 10px;
+    max-width: 850px;
     height: auto;
     width: 100%;
     border-radius: 8px;
@@ -714,6 +696,8 @@ section {
     0 0 20px cyan, 0 0 40px cyan 
 }
 
+
+
 /* .last-text{
     width: 100%;
     margin:15px 0;
@@ -813,23 +797,24 @@ section {
 
 
 
+/* .......................... the below part handle the image............  */
 
 
 
-
-/* /* .park-scene {
-    background: url(image.jpeg) no-repeat center center fixed;
+.park-scene {
+    background: url(shubh\ \(2\).jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .light-source {
-    height: 300px;
-    width: 300px;
+    height: 450px;
+    width: 450px;
     border-radius: 50%;
     background-color: rgba(15, 185, 228, 0.8);
     box-shadow: 0 0 50px 10px rgba(12, 239, 235, 0.991);
@@ -842,9 +827,8 @@ section {
 
 .light-source img {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-} 
+}  
