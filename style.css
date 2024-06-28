@@ -267,95 +267,98 @@ max-width: 600px;
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-
-
-section {
+#Skill {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.sub-title .ser {
+    color: rgb(255, 0, 0);
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
 }
 
 .container1 {
-    width: 600px;
-    height: 500px;
-    padding: 75px 90px;
-    margin-left: 120px;
+    width: 45%;
+    padding: 20px;
 }
 
-/* Rest of your CSS styles */
-
-.heading1{
+.heading1 {
     text-align: center;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-thickness: 3px;
-    margin-bottom:50px ;
+    margin-bottom: 20px;
 }
-.technical-bar .tech-bar{
-    margin-top: 40px 0;
+
+.technical-bar .tech-bar {
+    margin: 40px 0;
 }
-.technical-bar .tech-bar:first-child{
-    margin-top: 0;
-}
-.technical-bar .tech-bar:last-child{
-    margin-bottom: 0;
-}
-.technical-bar .tech-bar .info{
+
+.technical-bar .tech-bar .info {
+    display: flex;
+    align-items: center;
     margin-bottom: 5px;
-
-}
-.technical-bar .tech-bar .info span{
-    font-size: 17px;
-    font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
-    opacity: 0;
 }
 
-.technical-bar .tech-bar .progress-line{
+.technical-bar .tech-bar .info i {
+    margin-right: 10px;
+}
+
+.technical-bar .tech-bar .progress-line {
     position: relative;
     border-radius: 10px;
     width: 100%;
     height: 5px;
     background-color: #000000;
-    animation: animate 1s cubic-bezier(1,0,0,5,1) forwards ;
     transform: scaleX(0);
-    transform-origin:left;
-
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0, 5, 1) forwards;
 }
+
 @keyframes animate {
-    100%{
+    100% {
         transform: scaleX(1);
     }
-    
 }
-.technical-bar .tech-bar .progress-line span{
+
+.technical-bar .tech-bar .progress-line span {
     height: 100%;
     background-color: #0ef;
     position: absolute;
     border-radius: 10px;
-    animation: animate 1s 1s cubic-bezier(1,0,0,5,1) forwards;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0, 5, 1) forwards;
     transform: scaleX(0);
     transform-origin: left;
 }
-.tech-bar{
+
+.tech-bar {
     font-size: 20px;
 }
 
-.progress-line .html span{
+.progress-line .html span,
+.progress-line .css span,
+.progress-line .javascript span,
+.progress-line .react span,
+.progress-line .c span {
     width: 90%;
 }
-.progress-line  .css span{
-    width: 90%;
-}
-.progress-line .javascript span{
-    width: 90%;
-}
-.progress-line .react span{
-    width: 90%;
-}
-.progress-line .c span{
-    width: 90%;
-}
-.progress-line span::after{
+
+.progress-line span::after {
     position: absolute;
     padding: 1px 8px;
     background-color: #000000;
@@ -367,22 +370,28 @@ section {
     animation: showText 0.5s 1.5s linear forwards;
     opacity: 0;
 }
-.progress-line .html span::after{
+
+.progress-line .html span::after {
     content: "90%";
 }
-.progress-line .css span::after{
+
+.progress-line .css span::after {
     content: "90%";
 }
-.progress-line .javascript span::after{
+
+.progress-line .javascript span::after {
     content: "90%";
 }
-.progress-line .c span::after{
+
+.progress-line .react span::after {
     content: "90%";
 }
-.progress-line .react span::after{
+
+.progress-line .c span::after {
     content: "90%";
 }
-.progress-line span::before{
+
+.progress-line span::before {
     content: "";
     position: absolute;
     width: 0;
@@ -397,39 +406,35 @@ section {
 }
 
 @keyframes showText {
-    100%{
+    100% {
         opacity: 1;
     }
-    
 }
-.radial-bar{
-    width: 100%;
+
+.radial-bars {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
 }
-.radial-bars .radial-bar{
-    width: 50%;
+
+.radial-bar {
+    width: 45%;
     height: 170px;
-    margin-bottom: 10px;
     position: relative;
-
+    margin: 20px 0;
 }
-.radial-bars .radial-bar svg{
-    width: 50%;
-    height: 170px;
-    margin-bottom: 10px;
-    position: absolute;
-    top:50%;
-    left: 50;
-    transform: translate(-50%,-50%) rotate(-90deg);
+
+.radial-bar svg {
     width: 120px;
-    height: 160px;
-
-
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
 }
-.radial-bars .radial-bar .progress-bar{
+
+.radial-bar .progress-bar {
     stroke-width: 10px;
     stop-color: black;
     fill: transparent;
@@ -438,12 +443,14 @@ section {
     stroke-linecap: round;
     animation: animate-bar 1s linear forwards;
 }
+
 @keyframes animate-bar {
-    100%{
-        stroke-dashoffset: -1;
+    100% {
+        stroke-dashoffset: 0;
     }
 }
-.path{
+
+.path {
     stroke-width: 10;
     stroke: #0ef;
     fill: transparent;
@@ -451,55 +458,68 @@ section {
     stroke-dashoffset: 502;
     stroke-linecap: round;
 }
-.path-1{animation: animate-apth1 1s 1s linear forwards;}
-.path-2{animation: animate-apth2 1s 1s linear forwards;}
-.path-3{animation: animate-apth3 1s 1s linear forwards;}
-.path-4{animation: animate-apth4 1s 1s linear forwards;}
- 
+
+.path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
 @keyframes animate-path1 {
-    100%{
+    100% {
         stroke-dashoffset: 50;
     }
 }
+
 @keyframes animate-path2 {
-    100%{
+    100% {
         stroke-dashoffset: 175;
     }
 }
+
 @keyframes animate-path3 {
-    100%{
+    100% {
         stroke-dashoffset: 125;
     }
 }
+
 @keyframes animate-path4 {
-    100%{
+    100% {
         stroke-dashoffset: 75;
     }
 }
 
-.radial-bar .percentage{
+.radial-bar .percentage {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 17px;
     font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
-    opacity: 0;
-}
-.radial-bar .text{
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: -5px;
-    transform: translate(-50%);
-    font-size: 17px;
-    font-weight: 500;
-    left: 50%;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
 
+.radial-bar .text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: -5px;
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
