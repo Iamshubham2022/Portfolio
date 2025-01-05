@@ -3,44 +3,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'pippins', sans-serif;
+    font-family: Arial,'pippins', sans-serif;
 }
 
-/* body {
-    color: #ededed;
-    background:#010838;
-} */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('bg.jpg'); /* Replace with the uploaded image */
-    background-size: cover;
-    background-position: center;
+    color: #ffffff;
 }
+
 
 .header {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     padding: 20px 10%;
     justify-content: space-between;
     background: transparent;
     display: flex;
     align-items: center;
     z-index: 100;
-    background: rgb(0, 0, 0);
+    /* background: rgb(227, 212, 212); */
 }
 
 .logo {
     position: relative;
     font-size: 25px;
     text-decoration: none;
-    color: #fff;
+    color:#2b2b2b;
     font-weight: 600;
     cursor: default;
     opacity: 0;
@@ -50,15 +39,13 @@ body {
 .fol{
     text-decoration: none;
     font-size: 40px;
-    color: red;
+    color: rgb(187, 98, 85);
 }
-
-
 
 .navbar a {
     display: inline-block;
     font-size: 25px;
-    color: #fff;
+    color: #2b2b2b;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
@@ -67,9 +54,17 @@ body {
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s*var(--i));
 }
-.navbar a:hover {
-    color: red;
+/* Create the underline effect */
+.navbar a:hover::after {
+    content: ''; /* Empty content */
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the link */
+    left: 0;
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: #585555; /* Color of the underline */
 }
+
 
 .home {
     position: relative;
@@ -87,6 +82,7 @@ body {
 max-width: 600px;
 }
 .home-content h3 {
+    color: #413f3f ;
     font-size: 32px;
     font-weight: 700;
     opacity: 0;
@@ -99,9 +95,11 @@ max-width: 600px;
     animation-delay: 1.5s; */
 }
 .home-content h3 span{
-    color: cyan;
+    color: rgb(187, 98, 85);
+    
 }
 .home-content h1{
+    color: #413f3f;
     font-size: 60px;
     font-weight: 700;
     margin: -3px 0;
@@ -110,98 +108,44 @@ max-width: 600px;
     animation-delay: 1s;
 }
 .home-content p{
+    color: #585555;
     font-size: 20px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1.5s;
 }
 
-.home-sci a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid #0ef;
-    border-radius: 40%;
-    font-size: 20px;
-    color: #0ef;
-    text-decoration:none ;
-    margin: 30px 15px 30px 0;
-    transition: .1s ease; 
-    opacity: 0;
-    animation: slideLeft .5s ease forwards;
-    animation-delay: calc(.2s*var(--i));
- 
-}
-.home-sci a:hover{
-    background: #0ef;
-    color: black;
-    box-shadow: 0 0 20px #0ef;
-}
-.btn-box{
+
+.btn-box {
+    margin-top: 50px;
     display: inline-block;
     padding: 12px 28px;
-    background: #0ef;
-    border-radius: 40px;
-    font-size: 16px;
-    color: black;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgb(108, 107, 107); /* Fixed the border property */
+    font-size: 14px;
+    color: rgb(66, 65, 65);
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600; 
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: 1.5s;
-
-    
-}
-.btn-box:hover{
-    background: cyan;
-    box-shadow: 0 0 1px cyan,
-    0 0 4px rgb(24, 86, 86), 0 0 4px rgb(11, 67, 67),
-    0 0 20px cyan, 0 0 40px cyan 
+    cursor: pointer; /* Ensures the hand cursor is always shown */
 }
 
-.about{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    gap: 1.5rem;
-    
-}
+/* .btn-box:hover {
+    background: #dddddd;
+      /* Lighter background color on hover */
+              /* Optional: Change text color on hover */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); Optional: Add shadow on hover */
+} */
 
-.about-img img{
-    /* padding-bottom: 20%; */
-    margin-left: 10px;
-    max-width: 850px;
-    height: auto;
-    width: 100%;
-    border-radius: 8px;
-}
-.about-text h2{
-    font-size: 60px;
-}
-.about-text h2 span {
-    color: red;
-}
-.about-text h4 {
-    font-size: 25px;
-    font-weight: 600;
-    color:#fff;
-    line-height: 1.7;
-    margin:5px 0 20px;
-}
 
-.about-text p{
-    color: aliceblue;
-    font-size: 20px;
-    line-height: 1;
-    margin-bottom: 3rem;
-}
+
 
 #services{
-    color: aliceblue;
+    color: #2b2b2b;
     line-height: 1.4;
     font-size: 20px;
     margin-bottom: 4rem;
@@ -213,14 +157,15 @@ max-width: 600px;
     padding-bottom: 50px;
 }
 .ser{
-    color: red;
+    color: rgb(187, 98, 85);
 }
 .container{
     padding: 90px;
 }
 .service-list{
+    color: #585555;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(259px,3fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
@@ -232,8 +177,8 @@ max-width: 600px;
     border-right: 10px;
     border-radius: 20px;
     transition: background 0.5s,tranform 0.5s;
-    box-shadow: 1px 1px 20px #012290f7,
-                1px 1px 40px hwb(226 5% 24% / 0.969)
+    box-shadow: 1px 1px 20px #969db3f7,
+                1px 1px 40px hwb(226 51% 39% / 0.969)
 }
 .service-list div i{
     font-size: 50px;
@@ -254,24 +199,21 @@ max-width: 600px;
 .read{
     display: inline-block;
     padding: 5px 15px;
-    background: #0ef;
-    border-radius: 40px;
-    font-size: 16px;
-    color: #081629;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgb(108, 107, 107);
+    font-size: 14px;
+    color: rgb(66, 65, 65);
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
     opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.5s;
+    cursor: pointer; 
+}
 
-}
-.read:hover{
-    background: cyan;
-    box-shadow: 0 0 1px cyan,
-    0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
-    0 0 20px cyan, 0 0 40px cyan 
-}
+
 .service-list div:hover{
     transform: translateY(-20px);
 }
@@ -286,13 +228,14 @@ max-width: 600px;
 }
 
 .sub-title {
+    color: #2b2b2b;
     text-align: center;
     font-size: 3.5em;
     margin-bottom: 20px;
 }
 
 .sub-title .ser {
-    color: rgb(255, 0, 0);
+    color: rgb(187, 98, 85);
 }
 
 .skills-container {
@@ -373,7 +316,7 @@ max-width: 600px;
     position: absolute;
     padding: 1px 8px;
     background-color: #000000;
-    color: #fff;
+    color: #585555;
     font-size: 12px;
     border-radius: 3px;
     top: -28px;
@@ -540,6 +483,7 @@ max-width: 600px;
     margin-top: 200px;
 }
 .main-text h2{
+    color: #2b2b2b;
     font-size: 60px;
     line-height: 1;
     text-align: center;
@@ -597,10 +541,10 @@ max-width: 600px;
     line-height: 1.5;
 }
 .layer i{
-    color: #ff004f;
+    color: rgb(187, 98, 85);
     margin-top: 20px;
     font-size: 20px;
-    background: #fff;
+    background: #585555;
     width: 60px;
     height: 60px;
     display: flex;
@@ -626,6 +570,7 @@ max-width: 600px;
     gap: 3rem;
 }
 .contact-text h2{
+    color: #2b2b2b;
     font-size: 60px;
     line-height: 1;
     text-align: center;
@@ -634,7 +579,7 @@ max-width: 600px;
     margin: 15px 0;
     font-size: 20px;
     font-weight: 600;
-    color: aliceblue;
+    color: #1d1c1c;
 }
 .contact-text p{
     margin-bottom: 30px;
@@ -654,7 +599,7 @@ max-width: 600px;
     display: inline-block;
     font-size: 20px;
     font-weight: 600;
-    color: #fff;
+    color: ##585555;
     transition: all .40s ease;
 }
 .contact-list li a:hover{
@@ -696,7 +641,7 @@ max-width: 600px;
     outline: none;
     width: 90%;
     padding: 18px;
-    background: #dcdcf3;
+    background: #d7d7e1;
     color: #494545; 
     font-size: 1rem;
     font-weight: 600;
@@ -729,8 +674,8 @@ max-width: 600px;
     box-shadow: 0 0 1px cyan,
     0 0 4px rgb(18, 79, 79),
     0 0 4px rgb(7, 91, 91),
-    0 0 20px cyan,
-    0 0 40px cyan;
+    0 0 20px rgb(125, 134, 134),
+    0 0 40px rgb(123, 129, 129);
 }
 
 
@@ -759,7 +704,7 @@ max-width: 600px;
     border-radius: 0.5rem;
 }
 .top i:hover{
-    background: rgb(255, 0, 0);
+    background: rgb(187, 98, 85);
     box-shadow: 0 0 1px cyan,
     0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
     0 0 20px cyan, 0 0 40px cyan 
