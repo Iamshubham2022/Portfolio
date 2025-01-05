@@ -148,13 +148,11 @@ max-width: 600px;
     color: #2b2b2b;
     line-height: 1.4;
     font-size: 20px;
-    margin-bottom: 4rem;
-
 }
 .sub-title{
     text-align: center;
     font-size: 60px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 .ser{
     color: rgb(187, 98, 85);
@@ -225,7 +223,11 @@ max-width: 600px;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 80px; /* Space between sections */
+    padding-top: 40px; /* Adds space inside the section */
 }
+
+
 
 .sub-title {
     color: #2b2b2b;
@@ -247,6 +249,7 @@ max-width: 600px;
 }
 
 .container1 {
+    color: #585555;
     width: 45%;
     padding: 20px;
 }
@@ -292,7 +295,7 @@ max-width: 600px;
 
 .technical-bar .tech-bar .progress-line span {
     height: 100%;
-    background-color: #0ef;
+    background-color:rgb(187, 98, 85);
     position: absolute;
     border-radius: 10px;
     animation: animate 1s 1s cubic-bezier(1, 0, 0, 5, 1) forwards;
@@ -406,7 +409,7 @@ max-width: 600px;
 
 .path {
     stroke-width: 10;
-    stroke: #0ef;
+    stroke: rgb(187, 98, 85);
     fill: transparent;
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
@@ -479,8 +482,8 @@ max-width: 600px;
 
 
 .main-text{
-    padding-top: 130px;
-    margin-top: 200px;
+    padding-top: 80px;
+    margin-top: 80px;
 }
 .main-text h2{
     color: #2b2b2b;
@@ -565,11 +568,15 @@ max-width: 600px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    padding-left: 30px;
-    margin-top: 130px;
+    padding-top: 80px;
+    margin-top: 80px;
     gap: 3rem;
 }
+.contact-text{
+    margin-left: 50px;
+}
 .contact-text h2{
+    padding: 40px;
     color: #2b2b2b;
     font-size: 60px;
     line-height: 1;
@@ -579,17 +586,18 @@ max-width: 600px;
     margin: 15px 0;
     font-size: 20px;
     font-weight: 600;
-    color: #1d1c1c;
+    color: #2b2b2b;
 }
 .contact-text p{
     margin-bottom: 30px;
     list-style: 2;
     font-size: 20px;
-    color: rgb(177,177,177);
+   color: #585555;
 }
 
 .contact-list{
-    margin-bottom: 3rem;
+    margin-bottom: 15px;
+    color: #585555;
 }
 .contact-list li{
     margin-bottom: 10px;
@@ -604,9 +612,10 @@ max-width: 600px;
 }
 .contact-list li a:hover{
     transform: scale(1.01) translateY(-5px);
-    color: #0ef;
+    color: rgb(187, 98, 85);
 
 }
+
 .contact-icon i{
     display: inline-flex;
     justify-content: center;
@@ -614,23 +623,24 @@ max-width: 600px;
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 2px solid #0ef;
+    border: 2px solid rgb(187, 98, 85);
     border-radius: 50%;
     font-size: 20px;
-    color: #0ef;
+    color: rgb(187, 98, 85);
     text-decoration:none ;
     margin: 30px 15px 30px 0;
     transition: .1s ease; 
     opacity: 0;
     animation: slideLeft .5s ease forwards;
     animation-delay: calc(.2s*var(--i));
+    cursor: pointer;
 }
-
+/* 
 .contact-icon i:hover{
     background: rgb(26, 91, 96);
     color:#0000;
     box-shadow: 0 0 20px #0ef;
-}
+} */
 .contact-form form {
     position: relative;
 }
@@ -657,26 +667,27 @@ max-width: 600px;
 .contact-form form .send {
     display: inline-block;
     padding: 5px 15px;
-    background: rgb(57, 224, 236);
-    border-radius: 40px;
-    font-size: 16px;
-    color: #141f2e;
+    background: rgb(187, 98, 85);
+    border: 1px solid rgb(108, 107, 107); /* Fixed the border property */
+    font-size: 14px;
+    color: #585555;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
+    cursor: pointer;
 }
 
-.contact-form form .send:hover {
+/* .contact-form form .send:hover {
     background: cyan;
     box-shadow: 0 0 1px cyan,
     0 0 4px rgb(18, 79, 79),
     0 0 4px rgb(7, 91, 91),
     0 0 20px rgb(125, 134, 134),
     0 0 40px rgb(123, 129, 129);
-}
+} */
 
 
 
@@ -698,17 +709,18 @@ max-width: 600px;
 }
 .top i{
     color: #000;
-    background: rgb(89, 36, 25);
+    background: rgb(187, 98, 85);
     font-size: 20px;
     padding: 10px;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
-.top i:hover{
+/* .top i:hover{
     background: rgb(187, 98, 85);
-    box-shadow: 0 0 1px cyan,
+    box-shadow: 0 0 1px rgb(119, 123, 123),
     0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
     0 0 20px cyan, 0 0 40px cyan 
-}
+} */
 
 
 
