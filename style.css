@@ -6,9 +6,20 @@
     font-family: 'pippins', sans-serif;
 }
 
-body {
+/* body {
     color: #ededed;
     background:#010838;
+} */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('bg.jpg'); /* Replace with the uploaded image */
+    background-size: cover;
+    background-position: center;
 }
 
 .header {
