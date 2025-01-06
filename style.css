@@ -1061,15 +1061,14 @@ body {
 }
 
 .contact-text {
+    padding-top: 20vh;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.contact-text h2 {
-    font-size: 60px;
-    color: #2b2b2b;
-}
+
 .contact-text h4 {
+    padding-bottom: 3vh;
     font-size: 26px;
     color:#585555;
 }
@@ -1136,7 +1135,11 @@ body {
     margin-top: 20px;
     flex-direction: column;
 }
-
+.contact-form h2 {
+    font-size: 60px;
+    color: #2b2b2b;
+    padding-bottom: 5vh;
+}
 /* Box Styling for the Form */
 
 
@@ -1221,7 +1224,7 @@ body {
 
 /* Responsive Design for Smaller Screens */
 @media screen and (max-width: 600px) {
-    .contact-text h2 {
+    .contact-form h2 {
         font-size: 30px;
     }
 
