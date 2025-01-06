@@ -741,11 +741,21 @@ max-width: 600px;
     color:#0000;
     box-shadow: 0 0 20px #0ef;
 } */
+:root {
+    --form-height: 70vh;
+    --box-height: 75vh;
+    --form-width: 35vw;
+    --form-max-width: 450px;
+    --input-padding: 1rem;
+    --font-size: 1rem;
+}
+
 .contact-form {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    min-height: 600px; /* For small screens */
     background-color: #f4f4f4;
 }
 
@@ -753,19 +763,25 @@ max-width: 600px;
     position: relative;
     padding: 20px;
     background-color: #fff;
-    height: 70vh;
-    max-width: 450px;
+    height: var(--form-height);
+    width: var(--form-width);
+    max-width: var(--form-max-width);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);  /* Card-like shadow */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.box-form{
+
+.box-form {
     position: relative;
-    height: 75vh;
-    max-width: 455px;
+    height: calc(70vh + 5px); /* 5px added to the height */
+    width: calc(450px + 5px); /* 5px added to the width */
+    max-width: 455px; /* Maximum width for larger screens */
+    /* overflow: hidden; */
+    border-radius: 15px;
 }
-/* Animated border around the form with gaps and clockwise movement */
+
+
 .box-form::before {
     content: "";
     position: absolute;
@@ -773,21 +789,14 @@ max-width: 600px;
     left: -5px;
     right: -5px;
     bottom: -5px;
-    width: 460px;
-    height: 510px;
+    width: calc(var(--form-width) + 10px);
+    height: calc(var(--form-height) + 10px);
     z-index: 0;
     background: linear-gradient(90deg, rgb(187, 98, 85) 20%, rgb(52, 152, 219) 40%, rgb(123, 239, 178) 60%, rgb(187, 98, 85) 80%);
-    background-size: 400% 400%; /* Adjust for movement */
-    background-position: 0 0; /* Initial position */
+    background-size: 400% 400%;
+    background-position: 0 0;
     border-radius: 15px;
     animation: gradientMove 6s linear infinite;
-}
-
-
-
-.contact-form form {
-    position: relative;
-    z-index: 1; /* Ensure the form content stays above the animation */
 }
 
 .contact-form form input,
@@ -795,17 +804,18 @@ max-width: 600px;
     border: none;
     outline: none;
     width: 100%;
-    padding: 18px;
+    padding: var(--input-padding);
     background: #f4f4f4;
     color: #333;
-    font-size: 1rem;
+    font-size: var(--font-size);
     margin-bottom: 0.5rem;
     border-radius: 8px;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .contact-form textarea {
     resize: none;
-    height: 200px;
+    height: 30vh;
 }
 
 .contact-form form .send {
@@ -814,18 +824,31 @@ max-width: 600px;
     padding: 10px 20px;
     background: rgb(52, 152, 219);
     border: none;
-    font-size: 1rem;
+    font-size: var(--font-size);
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .contact-form form .send:hover {
     background: rgb(41, 128, 185);
+    transform: translateY(-2px);
 }
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    border: 1px solid rgb(52, 152, 219);
+}
+
+.contact-form form .send:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.5);
+}
+
 
 /* Animation for the border */
 /* Animation to move the gradient clockwise */
