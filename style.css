@@ -44,7 +44,7 @@ body {
 
 .navbar a {
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     color: #2b2b2b;
     text-decoration: none;
     font-weight: 500;
@@ -139,10 +139,10 @@ max-width: 600px;
       /* Lighter background color on hover */
               /* Optional: Change text color on hover */
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); Optional: Add shadow on hover */
-} */
+/* } */ 
 
 
-
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 #services{
     color: #2b2b2b;
