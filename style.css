@@ -757,6 +757,7 @@ max-width: 600px;
     height: 100vh;
     min-height: 600px; /* For small screens */
     background-color: #f4f4f4;
+    position: relative; /* Add relative positioning for smaller screen changes */
 }
 
 .form-box {
@@ -777,11 +778,10 @@ max-width: 600px;
     height: calc(70vh + 5px); /* 5px added to the height */
     width: calc(450px + 5px); /* 5px added to the width */
     max-width: 455px; /* Maximum width for larger screens */
-    /* overflow: hidden; */
     border-radius: 15px;
 }
 
-
+/* Animated border around the form with gaps */
 .box-form::before {
     content: "";
     position: absolute;
@@ -847,6 +847,25 @@ max-width: 600px;
 .contact-form form .send:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(41, 128, 185, 0.5);
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+    .contact-form {
+        justify-content: flex-end; /* Align to the bottom on small screens */
+        padding-bottom: 20px; /* Ensure some space from the bottom */
+    }
+
+    .form-box {
+        width: 90%; /* Allow it to expand a bit */
+        height: 60vh; /* Adjust height to fit smaller screens */
+    }
+
+    .box-form {
+        height: calc(60vh + 5px); /* 5px added to the height for box-form */
+        width: calc(90% + 5px); /* Width also adjusted */
+        max-width: none;
+    }
 }
 
 
