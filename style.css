@@ -9,10 +9,10 @@
 body {
     color: #ffffff;
 }
-
-
+/* Default Header */
+/* General header styles */
+/* General header styles */
 .header {
-    
     top: 0;
     left: 0;
     width: 100%;
@@ -23,42 +23,53 @@ body {
     align-items: center;
     z-index: 100;
     background-color: transparent;
-    box-shadow: 1px 1px 10px #969db3f7,
-    1px 1px 15px hwb(226 51% 39% / 0.969)
+    box-shadow: 1px 1px 10px #969db3f7, 1px 1px 15px hwb(226 51% 39% / 0.969);
 }
 
+/* Logo styles */
 .logo {
     position: relative;
     font-size: 25px;
     text-decoration: none;
-    color:#2b2b2b;
+    color: #2b2b2b;
     font-weight: 600;
     cursor: default;
     opacity: 0;
     font-size: 40px;
     animation: slideRight 1s ease forwards;
 }
-.fol{
+
+.fol {
     text-decoration: none;
     font-size: 40px;
     color: rgb(187, 98, 85);
 }
 
+/* Navbar container (Flexbox) */
+.navbar {
+    display: flex;
+    align-items: center;
+    color: #2b2b2b;
+    flex-grow: 1; /* Take up available space */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Navbar link styles */
 .navbar a {
     display: inline-block;
     font-size: 20px;
     color: #2b2b2b;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 35px; /* Space between links */
+    position: relative; /* Necessary for the hover effect */
     transition: .3s;
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s*var(--i));
+    opacity: 1; /* Make sure it's visible */
 }
-/* Create the underline effect */
+
+/* Navbar link hover effect (underline) */
 .navbar a:hover::after {
-    content: ''; /* Empty content */
+    content: ''; 
     position: absolute;
     bottom: 0; /* Position at the bottom of the link */
     left: 0;
@@ -67,40 +78,146 @@ body {
     background-color: #585555; /* Color of the underline */
 }
 
+/* Media Queries for smaller screens */
+@media screen and (max-width: 768px) {
+    /* For small screens, hide navbar by default and show hamburger */
+    .navbar {
+        display: none; /* Hide navbar by default */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active (when hamburger is clicked) */
+    }
+
+    .navbar a {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Keyframes for logo animation */
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hamburger Menu (for small screens) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    height: 5px;
+    width: 100%;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+}
+/* Show the navbar links when the hamburger menu is clicked */
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar.active .navbar-links {
+    display: block;
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin: 15px 0;
+        opacity: 1; /* Make them visible when active */
+        animation: none;
+    }
+
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide the links initially */
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar.active .navbar-links {
+        display: block;
+    }
+}
+
+/* Home Section */
 .home {
     position: relative;
     justify-content: space-between;
     width: 100%;
     height: 100vh;
-    /* background: url(resources/Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png) no-repeat; */
-    background-size:cover ;
+    background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     padding: 70px 10% 0;
 }
-.home-content{
-max-width: 600px;
+
+.home-content {
+    max-width: 600px;
 }
+
 .home-content h3 {
-    color: #413f3f ;
+    color: #413f3f;
     font-size: 32px;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
     animation-delay: .7s;
 }
-.home-content h3:nth-of-type(2){
-    margin-bottom:  20px;
-    /* animation: slideLeft 1s ease forwards;
-    animation-delay: 1.5s; */
-}
-.home-content h3 span{
+
+.home-content h3 span {
     color: rgb(187, 98, 85);
-    
 }
-.home-content h1{
+
+.home-content h1 {
     color: #413f3f;
     font-size: 60px;
     font-weight: 700;
@@ -109,14 +226,14 @@ max-width: 600px;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
 }
-.home-content p{
+
+.home-content p {
     color: #585555;
     font-size: 20px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1.5s;
 }
-
 
 .btn-box {
     margin-top: 50px;
@@ -136,35 +253,70 @@ max-width: 600px;
     cursor: pointer; /* Ensures the hand cursor is always shown */
 }
 
+/* Animation Keyframes */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-#services{
+#services {
     color: #2b2b2b;
     line-height: 1.4;
     font-size: 20px;
-   
 }
-.sub-title{
+
+.sub-title {
     text-align: center;
     font-size: 60px;
     padding-bottom: 60px;
 }
-.ser{
+
+.ser {
     color: rgb(187, 98, 85);
 }
-.container{
-   
+
+.container {
     padding: 20px 80px 80px;
 }
-.service-list{
+
+.service-list {
     color: #585555;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(259px,3fr));
+    grid-template-columns: repeat(auto-fit, minmax(259px, 3fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.service-list div{
+
+.service-list div {
     background-color: transparent;
     padding: 40px;
     font-size: 13px;
@@ -176,23 +328,27 @@ max-width: 600px;
     text-align: left;
     transition: transform 0.5s ease;
 }
-.service-list div i{
+
+.service-list div i {
     font-size: 50px;
     margin-bottom: 30px;
 }
+
 .service-list div h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
-.service-list div a{
+
+.service-list div a {
     font-size: 12px;
     text-decoration: none;
     color: #000;
     margin-top: 20px;
     display: inline-block;
 }
-.read{
+
+.read {
     display: inline-block;
     padding: 5px 15px;
     background: #ffffff;
@@ -209,13 +365,98 @@ max-width: 600px;
     cursor: pointer;
 }
 
-
-.service-list div:hover{
+.service-list div:hover {
     transform: translateY(-20px);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    #services {
+        font-size: 18px; /* Slightly smaller font size */
+    }
 
+    .sub-title {
+        font-size: 40px; /* Adjust sub-title size */
+        padding-bottom: 40px; /* Reduce padding */
+    }
+
+    .container {
+        padding: 20px 20px 60px; /* Adjust padding for small screens */
+    }
+
+    .service-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More columns for small screens */
+        grid-gap: 20px; /* Reduce gap */
+    }
+
+    .service-list div {
+        padding: 20px; /* Reduced padding for small screens */
+        font-size: 12px; /* Adjust font size */
+        font-weight: 400; /* Reduce font weight */
+    }
+
+    .service-list div i {
+        font-size: 40px; /* Smaller icons */
+    }
+
+    .service-list div h2 {
+        font-size: 25px; /* Smaller heading font size */
+    }
+
+    .service-list div a {
+        font-size: 10px; /* Smaller link font size */
+    }
+
+    .read {
+        padding: 5px 10px; /* Adjust read button padding */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    #services {
+        font-size: 16px; /* Further adjust font size */
+    }
+
+    .sub-title {
+        font-size: 30px; /* Further reduce title font size */
+        padding-bottom: 30px;
+    }
+
+    .container {
+        padding: 20px 10px 40px; /* Adjust padding further */
+    }
+
+    .service-list {
+        grid-template-columns: 1fr; /* Stack all services in one column */
+        grid-gap: 15px; /* Reduce gap further */
+    }
+
+    .service-list div {
+        padding: 15px; /* Even smaller padding */
+        font-size: 11px; /* Smaller font size */
+    }
+
+    .service-list div i {
+        font-size: 30px; /* Even smaller icons */
+    }
+
+    .service-list div h2 {
+        font-size: 22px; /* Smaller heading size */
+    }
+
+    .service-list div a {
+        font-size: 8px; /* Even smaller link font size */
+    }
+
+    .read {
+        padding: 4px 8px; /* Even smaller read button padding */
+        font-size: 10px; /* Smaller font size */
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 #Skill {
     display: flex;
     flex-direction: column;
@@ -224,8 +465,6 @@ max-width: 600px;
     margin-top: 80px; /* Space between sections */
     padding-top: 30px; /* Adds space inside the section */
 }
-
-
 
 .sub-title {
     color: #2b2b2b;
@@ -250,8 +489,8 @@ max-width: 600px;
 .container1 {
     color: #585555;
     width: 45%;
-    
 }
+
 /* Skills Section Styling */
 .skills-section {
     margin: 20px;
@@ -363,7 +602,7 @@ max-width: 600px;
 
 .technical-bar .tech-bar .progress-line span {
     height: 100%;
-    background-color:rgb(187, 98, 85);
+    background-color: rgb(187, 98, 85);
     position: absolute;
     border-radius: 10px;
     animation: animate 1s 1s cubic-bezier(1, 0, 0, 5, 1) forwards;
@@ -435,6 +674,7 @@ max-width: 600px;
         opacity: 1;
     }
 }
+
 /* Linear Bars Container */
 .linear-bars {
     display: flex;
@@ -530,20 +770,91 @@ max-width: 600px;
     animation: showText 0.5s 1s linear forwards;
 }
 
-/* Animation for Showing Text */
-@keyframes showText {
-    to {
-        opacity: 1;
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    #Skill {
+        padding-top: 20px; /* Adjust padding */
+    }
+
+    .sub-title {
+        font-size: 2.5em; /* Smaller font size */
+        padding-bottom: 10px;
+    }
+
+    .skills-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container1 {
+        width: 80%; /* Adjust width for small screens */
+    }
+
+    .skills-section {
+        margin: 10px;
+    }
+
+    .skills-category h3 {
+        font-size: 16px; /* Smaller header font */
+    }
+
+    .skills-buttons {
+        flex-direction: column; /* Stack skill buttons vertically */
+        align-items: center;
+    }
+
+    .skill-btn {
+        font-size: 12px; /* Smaller font size for buttons */
+        padding: 5px 12px; /* Adjust padding */
+    }
+
+    .linear-bars {
+        flex-direction: column; /* Stack linear bars vertically */
+        align-items: center;
+    }
+
+    .linear-bar {
+        width: 80%; /* Adjust bar width */
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    #Skill {
+        padding-top: 10px; /* Adjust padding further */
+    }
+
+    .sub-title {
+        font-size: 2em; /* Further reduce font size */
+    }
+
+    .skills-container {
+        flex-direction: column; /* Stack items */
+        align-items: center;
+    }
+
+    .container1 {
+        width: 90%; /* Adjust width for very small screens */
+    }
+
+    .skills-buttons {
+        flex-direction: column; /* Stack buttons */
+    }
+
+    .skill-btn {
+        font-size: 10px; /* Further reduce button font size */
+        padding: 4px 10px; /* Adjust padding */
     }
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-.project{
-    
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.project {
     padding-bottom: 20px;
 }
+
 .projects-header {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -557,8 +868,9 @@ max-width: 600px;
     text-align: center;
     margin-bottom: 30px;
 }
-.highlight{
-    color:rgb(187, 98, 85) ;
+
+.highlight {
+    color: rgb(187, 98, 85);
 }
 
 .projects-grid {
@@ -598,7 +910,6 @@ max-width: 600px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 1px 1px 3px #969db3f7;
-
 }
 
 .project-image {
@@ -662,61 +973,137 @@ max-width: 600px;
     transform: scale(1.1);
 }
 
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .projects-header h2 {
+        font-size: 36px; /* Smaller font size */
+    }
+
+    .projects-grid {
+        margin-left: 20px;
+        margin-right: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust grid columns for small screens */
+    }
+
+    .projects-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for small screens */
+        grid-gap: 20px;
+    }
+
+    .project-card {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .project-card h2 {
+        font-size: 24px; /* Smaller header font size */
+    }
+
+    .project-card p {
+        font-size: 14px; /* Smaller text for description */
+    }
+
+    .view-more {
+        font-size: 12px; /* Smaller button text */
+        padding: 4px 12px; /* Adjust padding */
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    .projects-header h2 {
+        font-size: 28px; /* Further reduce font size */
+    }
+
+    .projects-grid {
+        margin-left: 15px;
+        margin-right: 15px;
+        grid-template-columns: 1fr; /* Stack projects vertically */
+    }
+
+    .projects-list {
+        grid-template-columns: 1fr; /* Stack projects vertically */
+        grid-gap: 15px;
+    }
+
+    .project-card {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .project-card h2 {
+        font-size: 20px; /* Smaller font size for project title */
+    }
+
+    .project-card p {
+        font-size: 12px; /* Smaller description text */
+    }
+
+    .view-more {
+        font-size: 10px; /* Further reduce button text */
+        padding: 4px 10px; /* Adjust padding */
+    }
+}
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Global Styles */
 
-.contact{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    margin-top: 80px;
-    gap: 3rem;
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
-.contact-text{
-    margin-left: 50px;
-    padding-top: 40px;
-}
-.contact-text h2{
-    padding: 40px;
-    color: #2b2b2b;
-    font-size: 60px;
-    line-height: 1;
+
+.contact-text {
     text-align: center;
-}
-.contact-text h4{
-    margin: 15px 0;
-    font-size: 20px;
-    font-weight: 600;
-    color: #2b2b2b;
-}
-.contact-text p{
-    margin-bottom: 30px;
-    list-style: 2;
-    font-size: 20px;
-   color: #585555;
+    margin-bottom: 20px;
 }
 
-.contact-list{
-    margin-bottom: 15px;
+.contact-text h2 {
+    font-size: 60px;
+    color: #2b2b2b;
+}
+.contact-text h4 {
+    font-size: 26px;
+    color:#585555;
+}
+
+.contact-text p {
+    font-size: 18px;
+    margin-top: 15px;
     color: #585555;
 }
-.contact-list li{
+
+.contact-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    color: #585555;
+}
+.contact-list li {
     margin-bottom: 10px;
     display: block;
 }
-.contact-list i{
+.contact-list i {
     display: inline-block;
     font-size: 20px;
     font-weight: 600;
     color: ##585555;
-    transition: all .40s ease;
+    transition: all 0.40s ease;
 }
-.contact-list li a:hover{
+
+.contact-list li a:hover {
     transform: scale(1.01) translateY(-5px);
     color: rgb(187, 98, 85);
-
 }
 
-.contact-icon i{
+.contact-icon i {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -727,174 +1114,151 @@ max-width: 600px;
     border-radius: 50%;
     font-size: 20px;
     color: rgb(187, 98, 85);
-    text-decoration:none ;
+    text-decoration: none;
     margin: 30px 15px 30px 0;
-    transition: .1s ease; 
+    transition: 0.1s ease;
     opacity: 0;
-    animation: slideLeft .5s ease forwards;
-    animation-delay: calc(.2s*var(--i));
+    animation: slideLeft 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
     cursor: pointer;
 }
-/* 
-.contact-icon i:hover{
-    background: rgb(26, 91, 96);
-    color:#0000;
-    box-shadow: 0 0 20px #0ef;
-} */
-:root {
-    --form-height: 70vh;
-    --box-height: 75vh;
-    --form-width: 35vw;
-    --form-max-width: 450px;
-    --input-padding: 1rem;
-    --font-size: 1rem;
+
+.contact-icon a:hover {
+    color: #3498db;
 }
 
+/* Contact Form Section */
 .contact-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    min-height: 600px; /* For small screens */
-    background-color: #f4f4f4;
-    position: relative; /* Add relative positioning for smaller screen changes */
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
 }
 
-.form-box {
-    position: relative;
-    padding: 20px;
-    background-color: #fff;
-    height: var(--form-height);
-    width: var(--form-width);
-    max-width: var(--form-max-width);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Box Styling for the Form */
 
-.box-form {
-    position: relative;
-    height: calc(70vh + 5px); /* 5px added to the height */
-    width: calc(450px + 5px); /* 5px added to the width */
-    max-width: 455px; /* Maximum width for larger screens */
-    border-radius: 15px;
-}
 
 /* Animated border around the form with gaps */
-.box-form::before {
+/* Form Box Styling */
+.form-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative; /* Make sure the pseudo-element is positioned correctly */
+    z-index: 1; /* Ensure the form content appears above the gradient animation */
+}
+
+/* Pseudo-element for animated background behind the form */
+.form-box::before {
     content: "";
     position: absolute;
     top: -5px;
     left: -5px;
     right: -5px;
     bottom: -5px;
-    width: calc(var(--form-width) + 10px);
-    height: calc(var(--form-height) + 10px);
-    z-index: 0;
+    
     background: linear-gradient(90deg, rgb(187, 98, 85) 20%, rgb(52, 152, 219) 40%, rgb(123, 239, 178) 60%, rgb(187, 98, 85) 80%);
     background-size: 400% 400%;
     background-position: 0 0;
     border-radius: 15px;
     animation: gradientMove 6s linear infinite;
+    z-index: -1; /* Ensure it's behind the form content */
 }
-
-.contact-form form input,
-.contact-form form textarea {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: var(--input-padding);
-    background: #f4f4f4;
-    color: #333;
-    font-size: var(--font-size);
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-    transition: box-shadow 0.2s ease, border 0.2s ease;
-}
-
+/* Input Fields and Textarea */
+.contact-form input,
 .contact-form textarea {
-    resize: none;
-    height: 30vh;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
-.contact-form form .send {
-    display: inline-block;
-    width: 100%;
-    padding: 10px 20px;
+.contact-form .send {
+    padding: 12px;
     background: rgb(52, 152, 219);
+    color: white;
     border: none;
-    font-size: var(--font-size);
-    color: #fff;
-    font-weight: bold;
+    font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.contact-form form .send:hover {
+.contact-form .send:hover {
     background: rgb(41, 128, 185);
-    transform: translateY(-2px);
 }
 
-.contact-form form input:focus,
-.contact-form form textarea:focus {
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+/* Focus effects */
+.contact-form input:focus,
+.contact-form textarea:focus {
     border: 1px solid rgb(52, 152, 219);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-.contact-form form .send:focus {
+.contact-form .send:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(41, 128, 185, 0.5);
 }
 
-/* Media Query for smaller screens */
-@media screen and (max-width: 600px) {
-    .contact-form {
-        justify-content: flex-end; /* Align to the bottom on small screens */
-        padding-bottom: 20px; /* Ensure some space from the bottom */
-    }
-
-    .form-box {
-        width: 90%; /* Allow it to expand a bit */
-        height: 60vh; /* Adjust height to fit smaller screens */
-    }
-
-    .box-form {
-        height: calc(60vh + 5px); /* 5px added to the height for box-form */
-        width: calc(90% + 5px); /* Width also adjusted */
-        max-width: none;
-    }
-}
-
-
 /* Animation for the border */
-/* Animation to move the gradient clockwise */
 @keyframes gradientMove {
     0% {
         background-position: 0 0;
     }
-    25% {
-        background-position: 100% 0;
-    }
     50% {
-        background-position: 100% 100%;
-    }
-    75% {
-        background-position: 0 100%;
+        background-position: 100% 0;
     }
     100% {
         background-position: 0 0;
     }
 }
 
-.top{
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 600px) {
+    .contact-text h2 {
+        font-size: 30px;
+    }
+
+    .contact-text p {
+        font-size: 16px;
+    }
+
+    .contact-list li {
+        font-size: 14px;
+    }
+
+    .contact-icon a {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Design for Larger Screens */
+@media screen and (min-width: 768px) {
+    .contact {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-text,
+    .contact-form {
+        width: 45%;
+    }
+}
+
+/* Fixed position "Back to Top" button */
+.top {
     position: fixed;
     bottom: 2.1rem;
     right: 1.1rem;
 }
-.top i{
+
+.top i {
     color: #000;
     background: rgb(187, 98, 85);
     font-size: 20px;
@@ -902,120 +1266,5 @@ max-width: 600px;
     border-radius: 0.5rem;
     cursor: pointer;
 }
-/* .top i:hover{
-    background: rgb(187, 98, 85);
-    box-shadow: 0 0 1px rgb(119, 123, 123),
-    0 0 4px rgb(18, 79, 79), 0 0 4px rgb(7, 91, 91),
-    0 0 20px cyan, 0 0 40px cyan 
-} */
 
 
-
-@media screen and (max-width: 768px) {
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container1 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-img img {
-        max-width: 100%;
-    }
-
-    .service-list {
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-    }
-
-    .home-content h1 {
-        font-size: 40px;
-    }
-
-    .home-content p {
-        font-size: 18px;
-    }
-
-    .header {
-        padding: 20px 5%;
-    }
-
-    .navbar a {
-        font-size: 20px;
-        margin-left: 20px;
-    }
-
-    .btn-box {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .read {
-        padding: 5px 10px;
-    }
-}
-
-
-
-
-
-
-
-
-@keyframes slideRight{
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-@keyframes slideTop{
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    
-}
-@keyframes slideBottom{
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    
-}
-@keyframes slideLeft{
-    0%{
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    
-}
- @media screen and (max-width: 768px) {
-    .container {
-      width: 100%;
-    }
- }
-  

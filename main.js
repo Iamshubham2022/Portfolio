@@ -27,3 +27,11 @@ function SubmitHandler(event) {
 
     document.querySelector('.contact-form form').reset();
 }
+// Get the hamburger menu and navbar
+const hamburger = document.getElementById('hamburger');
+const navbar = document.getElementById('navbar');
+
+// Add an event listener to toggle the 'active' class on the navbar
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
