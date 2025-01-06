@@ -224,7 +224,7 @@ max-width: 600px;
     align-items: center;
     text-align: center;
     margin-top: 80px; /* Space between sections */
-    padding-top: 40px; /* Adds space inside the section */
+    padding-top: 30px; /* Adds space inside the section */
 }
 
 
@@ -251,7 +251,76 @@ max-width: 600px;
 .container1 {
     color: #585555;
     width: 45%;
-    padding: 20px;
+    
+}
+/* Skills Section Styling */
+.skills-section {
+    margin: 20px;
+}
+
+/* Category Header */
+.skills-category h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Container for Buttons */
+.skills-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Individual Skill Button */
+.skill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 15px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgb(108, 107, 107);
+    font-size: 14px;
+    color: rgb(66, 65, 65);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.5s;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Icon Styling */
+.skill-btn i {
+    font-size: 18px;
+}
+
+/* Hover Effect */
+.skill-btn:hover {
+    background: rgb(187, 98, 85);
+    color: #ffffff;
+    border-color: rgb(187, 98, 85);
+}
+
+/* Slide Right Animation */
+@keyframes slideRight {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Icon Styling */
+.skill-btn i {
+    font-size: 18px;
 }
 
 .heading1 {
@@ -367,116 +436,108 @@ max-width: 600px;
         opacity: 1;
     }
 }
-
-.radial-bars {
+/* Linear Bars Container */
+.linear-bars {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    gap: 20px;
 }
 
-.radial-bar {
-    width: 45%;
-    height: 170px;
-    position: relative;
+/* Individual Linear Bar */
+.linear-bar {
+    width: 100%;
+    max-width: 320px;
     margin: 20px 0;
+    position: relative;
+    text-align: center;
 }
 
-.radial-bar svg {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
+/* Background Bar */
+.linear-bar .background {
+    fill: #e0e0e0; /* Light grey background */
+    rx: 5px; /* Rounded corners */
 }
 
-.radial-bar .progress-bar {
-    stroke-width: 10px;
-    stop-color: black;
-    fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-    animation: animate-bar 1s linear forwards;
+/* Progress Bar */
+.linear-bar .progress {
+    fill: rgb(187, 98, 85); /* Progress bar color */
+    rx: 5px; /* Rounded corners */
+    width: 0; /* Initial width */
+    animation: animateBar 2s ease-in-out forwards;
 }
 
-@keyframes animate-bar {
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-.path {
-    stroke-width: 10;
-    stroke: rgb(187, 98, 85);
-    fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-}
-
+/* Path-Specific Widths */
 .path-1 {
-    animation: animate-path1 1s 1s linear forwards;
+    animation-delay: 0s;
+    --width: 90%;
 }
 
 .path-2 {
-    animation: animate-path2 1s 1s linear forwards;
+    animation-delay: 0.2s;
+    --width: 85%;
 }
 
 .path-3 {
-    animation: animate-path3 1s 1s linear forwards;
+    animation-delay: 0.4s;
+    --width: 95%;
 }
 
 .path-4 {
-    animation: animate-path4 1s 1s linear forwards;
+    animation-delay: 0.6s;
+    --width: 100%;
 }
 
-@keyframes animate-path1 {
-    100% {
-        stroke-dashoffset: 50;
+/* Keyframe Animation for Progress */
+@keyframes animateBar {
+    to {
+        width: var(--width);
     }
 }
 
-@keyframes animate-path2 {
-    100% {
-        stroke-dashoffset: 175;
-    }
+/* Percentage Text */
+.linear-bar .percentage {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #585555;
+    font-weight: bold;
 }
 
-@keyframes animate-path3 {
-    100% {
-        stroke-dashoffset: 125;
-    }
+/* Bar Title */
+.linear-bar .text {
+    font-size: 14px;
+    color: #2b2b2b;
+    margin-top: 5px;
 }
 
-@keyframes animate-path4 {
-    100% {
-        stroke-dashoffset: 75;
-    }
-}
-
-.radial-bar .percentage {
+/* Animation for Percentage and Text */
+.linear-bar .percentage {
     position: absolute;
-    top: 50%;
+    top: -30px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 17px;
+    transform: translateX(-50%);
+    font-size: 16px;
     font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
 }
 
-.radial-bar .text {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: -5px;
-    font-size: 17px;
+.linear-bar .text {
+    margin-top: 5px;
+    font-size: 14px;
     font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
 }
+
+/* Animation for Showing Text */
+@keyframes showText {
+    to {
+        opacity: 1;
+    }
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
